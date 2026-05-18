@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "analytics": "Data Analytics",
+    "sandbox": "Real-time Sandbox",
+    "ui-lab": "UI Lab"
+  },
+  "sidebar": {
+    "footer": "Front-end Dev Portfolio"
+  },
+  "avatar": {
+    "greeting": "Hi! I'm your portfolio guide. Hover over the menu items and I'll tell you all about it!",
+    "overview": "Who am I and what's my stack?",
+    "analytics": "See how I work with data.",
+    "sandbox": "Real-time logic lives here.",
+    "uiLab": "My custom UI components.",
+    "profile": "A quick look at my background: React, Vue, architecture and performance focus.",
+    "expertise": "I've worked in demanding niches: aviation (SkyUp), fintech apps and AdTech marketing.",
+    "stack": "My main toolkit. Clean TypeScript, and I know the nuances of both frameworks.",
+    "ai": "I don't just code — I automate routine through AI to free time for architecture design.",
+    "hobby": "When not coding, I follow Formula 1, dig into cars and order Philadelphia rolls.",
+    "contact": "Pick any convenient way. Write on Telegram or email — I'm always available!",
+    "toggles": "My custom animated toggles. No heavy libraries — just lightweight state and hardware-accelerated transforms.",
+    "fsdOn": "Much better! Slices and layers are under control.",
+    "fsdOff": "Oh no, not spaghetti code! Turn FSD back on 😅",
+    "aiOn": "Dev speed x3! Boilerplate and tests are generated automatically 🚀",
+    "aiOff": "AI disabled. Writing everything by hand, like in 2015.",
+    "segmented": "Custom Segmented Control. Notice the sliding background on switch — that's pure Framer Motion layouts!",
+    "buttonLab": "Test micro-animations for button states here. Pick a mode using the radio buttons on the left!",
+    "btnLoading": "Loading state: spinner shown, clicks blocked (pointer-events-none).",
+    "btnSuccess": "Success state: smooth transform and icon change to a checkmark.",
+    "btnDisabled": "Locked: opacity reduced and cursor set to not-allowed.",
+    "form": "Form with reactive validation. Enter test@error.com to trigger a 401 server error!",
+    "formError": "Oops, the form has validation errors. Please check your input!",
+    "formLoading": "Firing async request, simulating the service layer of the architecture...",
+    "form401": "Oops! Server returned 401 Unauthorized. Our Middleware caught a JWT session token failure 😵",
+    "formSuccess": "Form submitted successfully! Data validated and saved on the server.",
+    "connection": "You can pause the stream or speed up the WebSocket simulation here. Give it a try!",
+    "stream": "Metrics update on the fly without unnecessary re-renders of the whole tree, thanks to local state.",
+    "terminal": "This is a reactive event terminal. Each row is rendered with a micro-animation on entry!",
+    "traffic": "This interactive chart renders clicks and conversions fluctuations. Click the buttons above to switch metrics!",
+    "geo": "GEO analytics. See profitability and ROI of ad campaigns by country."
+  },
+  "sections": {
+    "overview": {
+      "title": "Oleksandr Levytskyi",
+      "subtitle": "Front-end Engineer"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "subtitle": "Custom interactive charts rendering AdTech metrics"
+    },
+    "sandbox": {
+      "title": "WebSocket Real-time Sandbox",
+      "subtitle": "Reactive simulation of high-frequency data stream processing without blocking the UI thread"
+    },
+    "uiLab": {
+      "title": "Interactive UI Lab",
+      "subtitle": "Custom micro-components of a design system with optimized performance"
+    }
+  },
+  "cards": {
+    "profile": {
+      "badge": "Front-end Engineer",
+      "description": "Specialized in Vue and React ecosystems. Proven track record in developing complex, scalable systems for aviation, digital agencies, and large-scale distribution sectors. Expert in FSD (Feature-Sliced Design) architecture, REST API consumption, and real-time data integration via WebSockets. Focused on code performance, scalable architecture, and business process automation. Actively utilize TypeScript and GitLab CI/CD to ensure high-quality delivery, while systematically integrating AI-driven development workflows."
+    },
+    "expertise": {
+      "title": "Expertise Domains"
+    },
+    "stack": {
+      "title": "Core Technical Stack"
+    },
+    "ai": {
+      "title": "AI & Development Velocity",
+      "subtitle": "",
+      "description": "By leveraging LLMs and AI-powered tools, I significantly accelerate code generation, automate unit testing, and streamline complex debugging. My approach combines deep architectural knowledge with AI efficiency to optimize development lifecycles, allowing for a dedicated focus on solving high-level business challenges and ensuring system reliability."
+    },
+    "hobby": {
+      "title": "Interests"
+    },
+    "contact": {
+      "title": "Connect With Me"
+    }
+  },
+  "analytics": {
+    "trafficSubtitle": "Data flow analytics for 24 hours",
+    "geoSubtitle": "Top location performance"
+  },
+  "sandboxWidget": {
+    "connection": {
+      "title": "Connection Manager",
+      "latency": "Stream Latency",
+      "disconnect": "Disconnect",
+      "connect": "Connect",
+      "clear": "Clear Sandbox Data"
+    },
+    "stats": {
+      "title": "Live Stream Stats",
+      "clicks": "Clicks Caught",
+      "convs": "Conversions Baked",
+      "errors": "API / Socket Errors"
+    },
+    "terminal": {
+      "title": "event_stream_terminal",
+      "idle": "[System] Terminal idle. Waiting for socket incoming frames..."
+    }
+  },
+  "uiLabWidget": {
+    "segmented": {
+      "subtitle": "Custom switcher with smart background animation",
+      "footer": "Active target:"
+    },
+    "toggles": {
+      "subtitle": "Accessible switches with reactive feedback",
+      "fsdLabel": "Strict FSD Architecture",
+      "aiLabel": "AI Velocity Boost",
+      "stateReady": "production_ready",
+      "stateLegacy": "legacy_warning",
+      "footer": "System state:"
+    },
+    "buttonLab": {
+      "subtitle": "Exploring UI state micro-interactions",
+      "loadingLabel": "Updating",
+      "successLabel": "Updated!",
+      "lockedLabel": "Locked State",
+      "saveLabel": "Save Changes",
+      "loadingBtn": "Checking session tokens...",
+      "footer": "DOM status:"
+    },
+    "form": {
+      "subtitle": "Client-side control and server error handling",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email address",
+      "phoneRequired": "Phone is required",
+      "phoneShort": "Phone number is too short",
+      "errorTitle": "HTTP Error 401: Unauthorized",
+      "errorDesc": "Your session has expired or the access token is invalid. Refresh the page.",
+      "submit": "Submit Secure Data",
+      "retry": "Retry Submit",
+      "loadingBtn": "Checking session tokens...",
+      "successTitle": "Data Received Successfully",
+      "successDesc": "Backend returned status 200 OK. Request fully validated.",
+      "reset": "Fill Form Again",
+      "footer": "System state:"
+    }
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "label": "Language"
+  }
+}

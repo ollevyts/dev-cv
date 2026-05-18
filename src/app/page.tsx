@@ -1,65 +1,124 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+import React, { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigationStore } from '@/shared/model/navigationStore';
+import { useAvatar } from '@/features/avatar-speech/model/AvatarContext';
+import { useTranslation } from '@/shared/i18n/useTranslation';
+import { BentoGrid } from '@/widgets/bento-grid/ui/BentoGrid';
+import { AnalyticsDashboard } from '@/widgets/analytics-dashboard/ui/AnalyticsDashboard';
+import { RealTimeSandBox } from "@/widgets/sandbox/ui/RealTimeSandbox";
+import { UiLab } from '@/widgets/ui-lab/ui/UiLab';
+
+export default function HomePage() {
+    const { activeTab } = useNavigationStore();
+    const { say, clearSpeech } = useAvatar();
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        say(t('avatar.greeting'));
+
+        const timer = setTimeout(() => {
+            clearSpeech();
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <main className="relative min-h-screen w-full bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-50 overflow-x-hidden">
+            <div className="relative z-10 px-4 py-6 sm:p-6 md:p-12 lg:p-16 max-w-7xl mx-auto w-full">
+
+                <AnimatePresence mode="wait">
+                    {activeTab === 'overview' && (
+                        <motion.section
+                            key="overview"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="flex flex-col space-y-10"
+                        >
+                            <header className="space-y-2">
+                                <motion.h1
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter bg-gradient-to-r from-slate-900 via-slate-600 to-slate-400 dark:from-white dark:via-slate-200 dark:to-slate-500 bg-clip-text text-transparent"
+                                >
+                                    {t('sections.overview.title')}
+                                </motion.h1>
+                                <motion.p
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.3 }}
+                                    className="text-base md:text-xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl"
+                                >
+                                    {t('sections.overview.subtitle')}
+                                </motion.p>
+                            </header>
+
+                            <div className="w-full">
+                                <BentoGrid />
+                            </div>
+                        </motion.section>
+                    )}
+
+                    {activeTab === 'analytics' && (
+                        <motion.section
+                            key="analytics"
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="w-full flex flex-col space-y-6"
+                        >
+                            <div className="space-y-1">
+                                <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">{t('sections.analytics.title')}</h2>
+                                <p className="text-sm text-slate-500 dark:text-slate-400">{t('sections.analytics.subtitle')}</p>
+                            </div>
+
+                            <AnalyticsDashboard />
+                        </motion.section>
+                    )}
+
+                    {activeTab === 'sandbox' && (
+                        <motion.section
+                            key="sandbox"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="w-full flex flex-col space-y-6"
+                        >
+                            <div className="space-y-1">
+                                <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">{t('sections.sandbox.title')}</h2>
+                                <p className="text-sm text-slate-500 dark:text-slate-400">{t('sections.sandbox.subtitle')}</p>
+                            </div>
+
+                            <RealTimeSandBox />
+                        </motion.section>
+                    )}
+
+                    {activeTab === 'ui-lab' && (
+                        <motion.section
+                            key="ui-lab"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="w-full flex flex-col space-y-6"
+                        >
+                            <div className="space-y-1">
+                                <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">{t('sections.uiLab.title')}</h2>
+                                <p className="text-sm text-slate-500 dark:text-slate-400">{t('sections.uiLab.subtitle')}</p>
+                            </div>
+
+                            <UiLab />
+                        </motion.section>
+                    )}
+                </AnimatePresence>
+            </div>
+
+            <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] pointer-events-none z-0" />
+            <div className="fixed bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-purple-600/10 blur-[100px] pointer-events-none z-0" />
+        </main>
+    );
 }
