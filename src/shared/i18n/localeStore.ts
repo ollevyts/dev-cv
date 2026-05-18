@@ -18,8 +18,8 @@ interface LocaleStore {
 export const useLocaleStore = create<LocaleStore>()(
   persist(
     (set) => ({
-      locale: 'uk',
-      messages: messages.uk,
+      locale: 'en',
+      messages: messages.en,
       setLocale: (locale) => set({ locale, messages: messages[locale] }),
     }),
     {

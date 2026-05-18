@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="uk" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning>
             <body className="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-50 flex h-screen w-screen overflow-x-hidden antialiased">
                 <Providers>
                     <AvatarProvider>
