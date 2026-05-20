@@ -3,7 +3,8 @@
     "overview": "Overview",
     "analytics": "Data Analytics",
     "sandbox": "Real-time Sandbox",
-    "ui-lab": "UI Lab"
+    "ui-lab": "UI Lab",
+    "tic-tac-toe": "Tic-Tac-Toe"
   },
   "sidebar": {
     "footer": "Front-end Dev Portfolio"
@@ -39,7 +40,16 @@
     "stream": "Metrics update on the fly without unnecessary re-renders of the whole tree, thanks to local state.",
     "terminal": "This is a reactive event terminal. Each row is rendered with a micro-animation on entry!",
     "traffic": "This interactive chart renders clicks and conversions fluctuations. Click the buttons above to switch metrics!",
-    "geo": "GEO analytics. See profitability and ROI of ad campaigns by country."
+    "geo": "GEO analytics. See profitability and ROI of ad campaigns by country.",
+    "ticTacToe": "I want to play with you",
+    "ticTacToeSetup": "Oh, let's play Tic-Tac-Toe! Pick your difficulty.",
+    "ticTacToeEasy": "🤖 Junior AI: The bot makes random moves. Perfect for a warmup!",
+    "ticTacToeHard": "🧠 Cyber Master: The bot analyzes lines and plans ahead. It's going to heat up!",
+    "ticTacToeStartHard": "Cyber Master activated. Hold on — my processor has already calculated your defeat! Your move.",
+    "ticTacToeStartEasy": "Let's go! You go first, your symbol is X.",
+    "ticTacToeDraw": "Draw! A perfectly equal match.",
+    "ticTacToeAiWin": "I won! Better luck next time 😏",
+    "ticTacToeHumanWin": "You won! Great strategy! 🎉"
   },
   "sections": {
     "overview": {
@@ -57,6 +67,10 @@
     "uiLab": {
       "title": "Interactive UI Lab",
       "subtitle": "Custom micro-components of a design system with optimized performance"
+    },
+    "ticTacToe": {
+      "title": "Tic-Tac-Toe vs. AI",
+      "subtitle": "A sleek, interactive Tic-Tac-Toe game featuring an intelligent AI opponent, smooth animations, and a modern, responsive interface."
     }
   },
   "cards": {
@@ -145,6 +159,27 @@
       "reset": "Fill Form Again",
       "footer": "System state:"
     }
+  },
+  "ticTacToeWidget": {
+    "selectDifficulty": "Select Difficulty",
+    "easy": "Junior AI",
+    "hard": "Cyber Master",
+    "startMatch": "Start Match",
+    "back": "Back",
+    "turn": "Turn:",
+    "humanTurn": "Human (X)",
+    "aiTurn": "AI (O)",
+    "human": "Human",
+    "ai": "AI",
+    "reset": "Reset board",
+    "victoryTitle": "Victory!",
+    "victoryDesc": "You beat the AI. Great strategy!",
+    "defeatTitle": "Defeat",
+    "defeatDesc": "Cyber Master was stronger this time.",
+    "drawTitle": "Draw Game",
+    "drawDesc": "Perfect balance. Nobody gave an inch.",
+    "playAgain": "Play Again",
+    "mainMenu": "Main Menu"
   },
   "theme": {
     "light": "Light",

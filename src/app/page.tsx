@@ -9,6 +9,7 @@ import { BentoGrid } from '@/widgets/bento-grid/ui/BentoGrid';
 import { AnalyticsDashboard } from '@/widgets/analytics-dashboard/ui/AnalyticsDashboard';
 import { RealTimeSandBox } from "@/widgets/sandbox/ui/RealTimeSandbox";
 import { UiLab } from '@/widgets/ui-lab/ui/UiLab';
+import { TicTacToe } from "@/features/tic-tac-toe/ui/TicTacToe";
 
 export default function HomePage() {
     const { activeTab } = useNavigationStore();
@@ -112,6 +113,22 @@ export default function HomePage() {
                             </div>
 
                             <UiLab />
+                        </motion.section>
+                    )}
+
+                    {activeTab === 'tic-tac-toe' && (
+                        <motion.section
+                            key="tic-tac-toe"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="w-full flex flex-col space-y-6"
+                        >
+                            <div className="space-y-1">
+                                <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">{t('sections.ticTacToe.title')}</h2>
+                                <p className="text-sm text-slate-500 dark:text-slate-400">{t('sections.ticTacToe.subtitle')}</p>
+                            </div>
+                            <TicTacToe />
                         </motion.section>
                     )}
                 </AnimatePresence>
