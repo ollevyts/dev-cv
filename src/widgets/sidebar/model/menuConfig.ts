@@ -1,4 +1,4 @@
-import { User, Database, FolderCode, LayoutDashboard, LucideIcon, Gamepad2 } from 'lucide-react';
+import { User, Database, FolderCode, LayoutDashboard, LucideIcon, Gamepad2, Cpu } from 'lucide-react';
 
 export interface IMenuItem {
     id: string;
@@ -10,7 +10,8 @@ export const menuItems: IMenuItem[] = [
     { id: 'analytics', icon: Database },
     { id: 'sandbox', icon: FolderCode },
     { id: 'ui-lab', icon: LayoutDashboard },
-    { id: 'tic-tac-toe', icon: Gamepad2 }
+    { id: 'tic-tac-toe', icon: Gamepad2 },
+    { id: 'performance', icon: Cpu }
 ];
 
 const avatarSpeechKeyMap: Record<string, string> = {
@@ -19,6 +20,7 @@ const avatarSpeechKeyMap: Record<string, string> = {
     sandbox: 'avatar.sandbox',
     'ui-lab': 'avatar.uiLab',
     'tic-tac-toe': 'avatar.ticTacToe',
+    'performance': 'avatar.performance',
 };
 
 export const getAvatarSpeechKey = (id: string): string => avatarSpeechKeyMap[id] ?? '';

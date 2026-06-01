@@ -4,7 +4,8 @@
     "analytics": "Data Analytics",
     "sandbox": "Real-time Sandbox",
     "ui-lab": "UI Lab",
-    "tic-tac-toe": "Tic-Tac-Toe"
+    "tic-tac-toe": "Tic-Tac-Toe",
+    "performance": "Performance"
   },
   "sidebar": {
     "footer": "Front-end Dev Portfolio"
@@ -23,8 +24,8 @@
     "contact": "Pick any convenient way. Write on Telegram or email — I'm always available!",
     "toggles": "My custom animated toggles. No heavy libraries — just lightweight state and hardware-accelerated transforms.",
     "fsdOn": "Much better! Slices and layers are under control.",
-    "fsdOff": "Oh no, not spaghetti code! Turn FSD back on 😅",
-    "aiOn": "Dev speed x3! Boilerplate and tests are generated automatically 🚀",
+    "fsdOff": "Oh no, not spaghetti code! Turn FSD back on",
+    "aiOn": "Dev speed x3! Boilerplate and tests are generated automatically",
     "aiOff": "AI disabled. Writing everything by hand, like in 2015.",
     "segmented": "Custom Segmented Control. Notice the sliding background on switch — that's pure Framer Motion layouts!",
     "buttonLab": "Test micro-animations for button states here. Pick a mode using the radio buttons on the left!",
@@ -34,7 +35,7 @@
     "form": "Form with reactive validation. Enter test@error.com to trigger a 401 server error!",
     "formError": "Oops, the form has validation errors. Please check your input!",
     "formLoading": "Firing async request, simulating the service layer of the architecture...",
-    "form401": "Oops! Server returned 401 Unauthorized. Our Middleware caught a JWT session token failure 😵",
+    "form401": "Oops! Server returned 401 Unauthorized. Our Middleware caught a JWT session token failure",
     "formSuccess": "Form submitted successfully! Data validated and saved on the server.",
     "connection": "You can pause the stream or speed up the WebSocket simulation here. Give it a try!",
     "stream": "Metrics update on the fly without unnecessary re-renders of the whole tree, thanks to local state.",
@@ -43,13 +44,18 @@
     "geo": "GEO analytics. See profitability and ROI of ad campaigns by country.",
     "ticTacToe": "I want to play with you",
     "ticTacToeSetup": "Oh, let's play Tic-Tac-Toe! Pick your difficulty.",
-    "ticTacToeEasy": "🤖 Junior AI: The bot makes random moves. Perfect for a warmup!",
-    "ticTacToeHard": "🧠 Cyber Master: The bot analyzes lines and plans ahead. It's going to heat up!",
+    "ticTacToeEasy": "Junior AI: The bot makes random moves. Perfect for a warmup!",
+    "ticTacToeHard": "Cyber Master: The bot analyzes lines and plans ahead. It's going to heat up!",
     "ticTacToeStartHard": "Cyber Master activated. Hold on — my processor has already calculated your defeat! Your move.",
     "ticTacToeStartEasy": "Let's go! You go first, your symbol is X.",
     "ticTacToeDraw": "Draw! A perfectly equal match.",
-    "ticTacToeAiWin": "I won! Better luck next time 😏",
-    "ticTacToeHumanWin": "You won! Great strategy! 🎉"
+    "ticTacToeAiWin": "I won! Better luck next time",
+    "ticTacToeHumanWin": "You won! Great strategy!",
+    "performance": "Watch how I handle heavy computation without blocking the UI thread.",
+    "perfWorkerStart": "Launching computation in a Web Worker on a background CPU core...",
+    "perfWorkerDone": "Great! The Web Worker processed 2 million records in parallel. FPS stayed stable — I didn't even blink!",
+    "perfMainThread": "Oh no! You ran heavy math on the Main Thread. Everything will freeze for a second — watch my animations!",
+    "perfStream": "Stream activated! 500 events/sec are hitting the system. Notice the FPS — state updates are batched via useRef."
   },
   "sections": {
     "overview": {
@@ -69,8 +75,12 @@
       "subtitle": "Custom micro-components of a design system with optimized performance"
     },
     "ticTacToe": {
-      "title": "Tic-Tac-Toe vs. AI",
-      "subtitle": "A sleek, interactive Tic-Tac-Toe game featuring an intelligent AI opponent, smooth animations, and a modern, responsive interface."
+      "title": "Tic-Tac-Toe vs. Algo",
+      "subtitle": "A sleek, interactive Tic-Tac-Toe game featuring an intelligent opponent, smooth animations, and a modern, responsive interface."
+    },
+    "performance": {
+      "title": "Performance Sandbox",
+      "subtitle": "Web Workers vs Main Thread — real rendering under high-frequency data load without blocking the UI"
     }
   },
   "cards": {
@@ -180,6 +190,23 @@
     "drawDesc": "Perfect balance. Nobody gave an inch.",
     "playAgain": "Play Again",
     "mainMenu": "Main Menu"
+  },
+  "perfWidget": {
+    "workerTitle": "Multi-Threading (Web Workers)",
+    "workerDesc": "Comparing 2,000,000 record computation. Main Thread will freeze the UI, while the Web Worker runs on a background CPU core.",
+    "status": "Status:",
+    "statusWorker": "Worker processing...",
+    "statusMain": "Main Thread frozen...",
+    "statusIdle": "Idle",
+    "execTime": "Execution Time:",
+    "revenue": "Aggregated Revenue:",
+    "runWorker": "Run in Worker",
+    "runMain": "Run in Main Thread",
+    "streamTitle": "High-Speed Log Stream",
+    "streamDesc": "Microservice data stream simulation (500 events/sec). Preventing lag via Throttled Buffer Architecture.",
+    "streamOffline": "Stream is offline. Awaiting activation.",
+    "stopStream": "Stop Stream",
+    "startStream": "Start High-Load Stream"
   },
   "theme": {
     "light": "Light",

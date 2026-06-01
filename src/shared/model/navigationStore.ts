@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type TabType = 'overview' | 'analytics' | 'sandbox' | 'ui-lab' | 'tic-tac-toe';
+type TabType = 'overview' | 'analytics' | 'sandbox' | 'ui-lab' | 'tic-tac-toe' | 'performance';
 
 interface INavigationState {
     activeTab: TabType,
